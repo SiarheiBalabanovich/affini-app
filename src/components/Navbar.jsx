@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import logoImg from "../assets/logo.png";
+
 
 function Navbar() {
   const [isBannerVisible, setIsBannerVisible] = useState(true);
@@ -111,8 +113,8 @@ function Navbar() {
             }}
           >
             <img
-              src="/src/assets/logo.png"
-              alt="Affini Logo"
+              src={logoImg}
+                alt="Affini Logo"
               className="xs:w-[66px] xs:h-[21px] sm:w-[80px] sm:h-[25px] md:w-[108px] md:h-[35px]"
               style={{
                 width:
