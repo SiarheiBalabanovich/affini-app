@@ -1,5 +1,3 @@
-import logoFooter from '../assets/logo_footer.svg';
-
 function FooterSection() {
     return (
         <>
@@ -7,14 +5,15 @@ function FooterSection() {
                 <div className="max-w-[1440px] mx-auto px-4 lg:px-0">
                     <div className="max-w-[1280px] mx-auto md:px-[80px] px-4 lg:px-0 flex flex-col items-start lg:flex-row lg:items-start lg:justify-between pt-6 lg:pt-0">
                         
-                        {/* Logo*/}
+                        {/* Logo */}
                         <div className="mb-12 lg:mt-7 xs:w-full xs:flex xs:justify-start xs:pl-[5%] md:pl-[80px]">
                             <img 
-                                src={logoFooter} 
-                                alt="Affini Logo" 
-                                className="w-[145px] h-[46.63px] footer-logo" 
+                            src="/logo_Affini.svg"
+                            alt="Affini Logo"
+                            className="w-[145px] h-[46.63px] footer-logo"
                             />
                         </div>
+
     
                         {/* Menu */}
                         <nav className="w-full lg:w-auto xs:px-4">
