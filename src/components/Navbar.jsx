@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import logoImg from "../assets/logo.png";
-
+import arrowRight from "../assets/arrow-right.svg";
 
 function Navbar() {
   const [isBannerVisible, setIsBannerVisible] = useState(true);
@@ -167,9 +167,9 @@ function Navbar() {
             >
               LOG IN
               <img
-                src="/src/assets/arrow-right.svg"
-                alt="Arrow"
-                className="w-[20px] h-[20px]"
+              src={arrowRight}
+              alt="Arrow"
+              className="w-[20px] h-[20px]"
               />
             </button>
 
