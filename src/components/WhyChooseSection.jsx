@@ -30,7 +30,7 @@ function WhyChooseSection() {
 
       {/* Main content */}
       <div
-        className="relative flex flex-col sm:flex-row sm:justify-between w-full xs:pl-[12px] md:px-[80px] xxl:mt-[200px]"
+        className="relative flex flex-col sm:flex-row sm:justify-between w-full xs:pl-[10px] md:px-[80px] xxl:mt-[200px]"
         style={{ gap: '24px' }}
       >
         {/* Decorative pattern */}
