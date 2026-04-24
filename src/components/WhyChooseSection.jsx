@@ -50,7 +50,7 @@ function WhyChooseSection() {
 
         {/* First card */}
         <div
-          className="relative flex flex-col items-center card-style h-[640px] xs:h-[550px] xs:w-[350px] md:w-[411px] xs:mx-auto xs:mr-[20px]"
+          className="relative flex flex-col items-center card-style h-[640px] xs:w-[350px] md:w-[411px] xs:mx-auto xs:mr-[20px]"
           style={{
             width: window.innerWidth <= 768 ? '350px' : '411px',
             borderTopLeftRadius: '200px',
@@ -207,7 +207,7 @@ function WhyChooseSection() {
 
         {/* Second card */}
         <div
-          className="relative flex flex-col items-center card-style card-second h-[640px] xs:h-[550px] xs:w-[350px] md:w-[411px] xs:mt-0 md:mt-[480px]"
+          className="relative flex flex-col items-center card-style card-second h-[640px] xs:w-[350px] md:w-[411px] xs:mt-0 md:mt-[480px]"
           style={{
             borderTopLeftRadius: '200px',
             borderTopRightRadius: '200px',
