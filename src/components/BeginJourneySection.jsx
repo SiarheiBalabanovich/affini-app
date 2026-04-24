@@ -182,7 +182,7 @@ function BeginYourFamilyJourney() {
                     }
                     .thread-768 {
                         top: 35% !important;
-                        left: 76% !important;
+                        left: 56% !important;
                         width: 350px !important;
                         height: 350px !important;
                     }
