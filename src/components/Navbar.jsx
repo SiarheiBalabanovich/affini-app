@@ -65,7 +65,7 @@ function Navbar() {
                 typeof window !== "undefined"
                   ? window.innerWidth <= 320
                     ? "10px"
-                    : window.innerWidth <= 390
+                    : window.innerWidth <= 430
                     ? "12px"
                     : "16px"
                   : "16px",
