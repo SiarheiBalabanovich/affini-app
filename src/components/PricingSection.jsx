@@ -42,7 +42,7 @@ function PricingSection() {
         <div className="pricing-container flex flex-col md:flex-row justify-center gap-[66px] xs:gap-[24px] mt-[80px] xs:mt-[40px]">
         {/* Card Basic Plan */}
           <div
-            className="shadow-md p-[32px] flex flex-col items-start relative xs:w-[340px] md:w-[411px] pricing-card"
+            className="shadow-md p-[32px] flex flex-col items-start relative w-full max-w-[411px] pricing-card"
             style={{
               height: "638px",
               backgroundColor: "rgba(53, 244, 131, 0.6)",
@@ -141,7 +141,7 @@ function PricingSection() {
           </div>
           {/* Card Family Plan */}
           <div
-  className="shadow-md p-[32px] flex flex-col items-start relative xs:w-[340px] md:w-[411px] pricing-card family-plan"
+  className="shadow-md p-[32px] flex flex-col items-start relative w-full max-w-[411px] pricing-card family-plan"
   style={{
     height: "638px",
     backgroundColor: "#198244",
