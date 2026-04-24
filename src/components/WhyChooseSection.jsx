@@ -401,7 +401,6 @@ function WhyChooseSection() {
           }
           #benefits > div.relative.flex {
             flex-direction: column !important;
-            align-items: center !important;
           }
         }
 
