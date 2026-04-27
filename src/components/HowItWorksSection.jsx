@@ -5,8 +5,38 @@ import simpleSetupIcon from '../assets/button_simple_setup.svg';
 import iconCardStep from '../assets/icon_card_step.svg';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function HowItWorksSection() {
+
+  useEffect(() => {
+  const ctx = gsap.context(() => {
+    const cards = gsap.utils.toArray(".howitworks-card");
+
+    if (!cards.length) return;
+
+    gsap.from(cards, {
+      scrollTrigger: {
+        trigger: cards[0],
+        start: "top 85%",
+        once: true,
+      },
+      y: 60,
+      opacity: 0,
+      scale: 0.95,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: "power3.out",
+    });
+  });
+
+  return () => ctx.revert();
+}, []);
+
   return (
     <section
       id="how-it-works"
