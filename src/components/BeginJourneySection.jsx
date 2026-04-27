@@ -1,9 +1,21 @@
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 import imageFamilies from '../assets/image-families.png';
 import threadPatternFamily from '../assets/thread_pattern_family.svg';
 import curvedBackground from '../assets/wave_background.png';
 import logoAffini from '../assets/logo.png';
 
 function BeginYourFamilyJourney() {
+    const imageRef = useRef(null);
+    useEffect(() => {
+  gsap.to(imageRef.current, {
+    y: 20,
+    duration: 3,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+  });
+}, []);
     return (
         <section className="relative flex justify-center items-center bg-cover bg-top w-full min-h-[676px] overflow-visible"
             style={{ backgroundImage: `url(${curvedBackground})` }}
@@ -37,7 +49,8 @@ function BeginYourFamilyJourney() {
                 </div>
 
                 <div className="image-container image-320 image-390 image-768 image-1024">
-                    <img 
+                    <img
+                        ref={imageRef} 
                         src={imageFamilies}
                         alt="Family Journey"
                         className="family-image"
