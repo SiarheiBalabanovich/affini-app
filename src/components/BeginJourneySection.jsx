@@ -82,7 +82,7 @@ function BeginYourFamilyJourney() {
                     font-size: 16px;
                     border-radius: 4px;
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                    width: 343px;
+                    width: 320px;
                     height: 48px;
                     margin-top: 8px;
                 }
