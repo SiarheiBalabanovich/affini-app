@@ -50,7 +50,7 @@ function WhyChooseSection() {
 
         {/* First card */}
         <div
-          className="relative flex flex-col items-center card-style xs:w-[350px] md:w-[411px] xs:mx-auto xs:mr-[20px]"
+          className="relative flex flex-col items-center card-style xs:w-[350px] md:w-[411px] xs:mx-auto"
           style={{
             width: window.innerWidth <= 768 ? '350px' : '411px',
             borderTopLeftRadius: '200px',
