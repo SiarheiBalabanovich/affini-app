@@ -207,7 +207,7 @@ function WhyChooseSection() {
 
         {/* Second card */}
         <div
-          className="relative flex flex-col items-center card-style card-second h-[640px] xs:w-[350px] md:w-[411px] xs:mt-0 md:mt-[480px]"
+          className="relative flex flex-col items-center card-style card-second xs:w-[350px] md:w-[411px] xs:mt-0 md:mt-[480px]"
           style={{
             borderTopLeftRadius: '200px',
             borderTopRightRadius: '200px',
