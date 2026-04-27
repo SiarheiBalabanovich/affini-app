@@ -362,7 +362,7 @@ function WhyChooseSection() {
           }
           #benefits .card-second {
             margin-left: auto !important;
-            margin-right: 20px !important;
+            margin-right: 10px !important;
           }
           #benefits .thread-pattern-mobile {
             top: 775px !important;
