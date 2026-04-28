@@ -5,7 +5,7 @@ import threadPatternFamily from '../assets/thread_pattern_family.svg';
 import curvedBackground from '../assets/wave_background.png';
 import logoAffini from '../assets/logo.png';
 
-function BeginYourFamilyJourney() {
+function BeginJourneySection() {
     const imageRef = useRef(null);
 
     useEffect(() => {
@@ -241,4 +241,4 @@ function BeginYourFamilyJourney() {
     );
 }
 
-export default BeginYourFamilyJourney;
+export default BeginJourneySection;
