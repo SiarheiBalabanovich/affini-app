@@ -6,15 +6,19 @@ import curvedBackground from '../assets/wave_background.png';
 import logoAffini from '../assets/logo.png';
 
 function BeginYourFamilyJourney() {
-    const imageRef = useRef(null);
-    useEffect(() => {
-  gsap.to(imageRef.current, {
+    const imageRef = useRef<HTMLImageElement | null>(null);
+
+useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!imageRef.current) return;
+
+    gsap.to(imageRef.current, {
     y: 20,
     duration: 3,
     repeat: -1,
     yoyo: true,
     ease: "sine.inOut",
-  });
+    });
 }, []);
     return (
         <section className="relative flex justify-center items-center bg-cover bg-top w-full min-h-[676px] overflow-visible"
