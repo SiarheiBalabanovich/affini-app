@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import imageFamilies from '../assets/image-families.png';
 import threadPatternFamily from '../assets/thread_pattern_family.svg';
 import curvedBackground from '../assets/wave_background.png';
