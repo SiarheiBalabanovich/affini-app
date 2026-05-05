@@ -30,6 +30,7 @@ function BeginJourneySection() {
       <img
         src={threadPatternFamily}
         alt=""
+        aria-hidden="true"
         className="
           absolute z-10
           w-[220px] h-[220px]
@@ -56,7 +57,7 @@ function BeginJourneySection() {
           />
 
           <h2 className="
-            font-['Playfair_Display']
+            font-playfair
             text-[#1A2935]
             text-[24px]
             md:text-[36px]
@@ -68,7 +69,7 @@ function BeginJourneySection() {
           </h2>
 
           <p className="
-            font-['Raleway']
+            font-raleway
             text-[#1A2935]/80
             text-[14px]
             md:text-[16px]
@@ -86,7 +87,7 @@ function BeginJourneySection() {
               w-[280px] md:w-[320px]
               h-[48px]
               rounded
-              shadow-md
+              shadow-[-2px_8px_8px_rgba(0,0,0,0.08)]
             "
             onClick={() =>
               document.getElementById("contact-us")?.scrollIntoView({ behavior: "smooth" })
