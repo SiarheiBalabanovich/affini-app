@@ -1,4 +1,4 @@
-import logo from "../assets/logo_Affini.svg";
+import logo from "../assets/logo.png";
 
 function FooterSection() {
   const links = [
