@@ -47,7 +47,8 @@ function ContactSection() {
           {/* Top Icon */}
           <img
             src={iconFormLeft}
-            alt="Decorative icon"
+            alt=""
+            aria-hidden="true"
             className="
               absolute top-[10px] left-[10px]
               w-[24px]
@@ -180,7 +181,8 @@ function ContactSection() {
           {/* Bottom Icon */}
           <img
             src={iconFormRight}
-            alt="Decorative icon"
+            alt=""
+            aria-hidden="true"
             className="
               absolute bottom-[5px] right-[5px]
               w-[24px]
