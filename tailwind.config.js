@@ -17,7 +17,11 @@ export default {
         70: "rgba(26, 41, 53, 0.7)",
         30: "rgba(26, 41, 53, 0.3)",
       },
+      whiteCustom: "#FCFEFF",
     },
+    boxShadow: {
+      soft: "-2px 8px 8px rgba(0,0,0,0.08)"
+      },
       screens: {
         xs: { max: '479px' },
         sm: '480px',

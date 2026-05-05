@@ -10,21 +10,26 @@ function BeginJourneySection() {
   const imageRef = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.to(imageRef.current, {
-        y: 20,
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
+  if (!imageRef.current) return;
+
+  const el = imageRef.current;
+
+  const ctx = gsap.context(() => {
+    gsap.to(el, {
+      y: 20,
+      duration: 3,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
     });
-    return () => ctx.revert();
-  }, []);
+  }, imageRef);
+
+  return () => ctx.revert();
+}, []);
 
   return (
     <section
-      className="relative flex items-center justify-center w-full min-h-[676px] bg-cover bg-top"
+      className="relative flex items-center justify-center w-full min-h-[600px] md:min-h-[676px] bg-cover bg-top"
       style={{ backgroundImage: `url(${curvedBackground})` }}
     >
       <img
@@ -41,7 +46,7 @@ function BeginJourneySection() {
         "
       />
 
-      <div className="relative z-20 flex flex-col md:flex-row items-center justify-between w-full max-w-[1280px] px-5 pt-[100px]">
+      <div className="relative z-20 flex flex-col md:flex-row items-center justify-between w-full max-w-[1280px] px-5 pt-16 md:pt-24 lg:pt-[100px]">
         
         <div className="flex flex-col items-start w-full mb-8 md:mb-0 md:-mt-[120px]">
           
@@ -58,19 +63,19 @@ function BeginJourneySection() {
 
           <h2 className="
             font-playfair
-            text-[#1A2935]
+            text-primary
             text-[24px]
             md:text-[36px]
             lg:text-[58px]
             leading-[120%]
             mb-4
           ">
-            Begin Your Family`s <br /> Journey Today
+            Begin Your Family’s <br /> Journey Today
           </h2>
 
           <p className="
             font-raleway
-            text-[#1A2935]/80
+            text-primary/80
             text-[14px]
             md:text-[16px]
             lg:text-[18px]
@@ -82,12 +87,15 @@ function BeginJourneySection() {
           <button
             type="button"
             className="
-              bg-[#1A2935] text-[#FCFEFF]
+              bg-primary text-whiteCustom
               text-[14px] md:text-[16px]
               w-[280px] md:w-[320px]
               h-[48px]
               rounded
-              shadow-[-2px_8px_8px_rgba(0,0,0,0.08)]
+              shadow-soft
+              cursor-pointer
+              hover:bg-primary/90
+              focus-visible:ring-2 focus-visible:ring-primary/30
             "
             onClick={() =>
               document.getElementById("contact-us")?.scrollIntoView({ behavior: "smooth" })
