@@ -8,7 +8,6 @@ import logoAffini from '../assets/logo.png';
 
 function BeginJourneySection() {
   const imageRef = useRef(null);
-
   useEffect(() => {
   if (!imageRef.current) return;
 
