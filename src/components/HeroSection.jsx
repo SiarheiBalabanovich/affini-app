@@ -16,12 +16,12 @@ function HeroSection() {
   return (
     <section id="home" className="relative w-full overflow-hidden bg-lightBlue">
       <div className="relative mx-auto flex w-full max-w-[1280px] flex-col px-4 pt-5 pb-10 md:pb-20 lg:min-h-[720px] lg:flex-row lg:items-center lg:px-10 lg:py-20 lg2:px-0">
-        <div className="relative w-full lg:hidden">
+        <div className="relative -mx-4 w-[calc(100%+2rem)] lg:hidden">
           <img
             src={imageHeroMobile}
             alt="Affini mobile messaging preview"
-            className="mt-[-115px] -mb-[80px] w-full object-contain"
-          />
+            className="mt-[-115px] -mb-[30px] w-full object-cover"
+        />
         </div>
 
         <div className="relative z-10 flex w-full max-w-[500px] flex-col items-start">
