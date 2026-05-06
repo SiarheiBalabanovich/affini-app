@@ -5,7 +5,7 @@ function ContactSection() {
   return (
     <section
       id="contact-us"
-      className="bg-[#DCEFFF] py-10 md:py-16 px-4 md:px-16 lg:px-24"
+      className="bg-lightBlue py-10 md:py-16 px-4 md:px-16 lg:px-24"
     >
       <div className="mx-auto flex flex-col lg:flex-row items-start gap-8 md:gap-14 mt-10 md:mt-20 mb-4 md:mb-20 max-w-[1280px]">
 
@@ -13,7 +13,7 @@ function ContactSection() {
         <div className="lg:w-1/2 max-w-[577px]">
           <h2 className="
             text-[24px] md:text-[36px] lg:text-[58px]
-            font-playfair text-[#1A2935]
+            font-playfair text-primary
             leading-[120%]
             mb-4 md:mb-6
           ">
@@ -23,7 +23,7 @@ function ContactSection() {
           <p className="
             text-[14px] md:text-[16px] lg:text-[20px]
             font-raleway font-medium
-            text-[#1A2935]/80
+            text-primary/80
             leading-[130%]
           ">
             Have questions about how Affini can help your family stay connected? Our team
@@ -37,11 +37,11 @@ function ContactSection() {
           className="
             relative w-full max-w-[626px]
             min-h-[500px] md:min-h-[600px]
-            bg-[#FCFEFF]
+            bg-whiteCustom
             p-4 pt-10 md:p-10
             rounded-[0_100px_0_100px]
             flex flex-col justify-between
-            shadow-[0px_8px_20px_rgba(6,28,61,0.08)]
+            shadow-soft
           "
         >
           {/* Top Icon */}
@@ -59,7 +59,7 @@ function ContactSection() {
           <h3 className="
             text-[16px] md:text-[20px] lg:text-[24px]
             font-raleway font-medium
-            text-[#1A2935]/80
+            text-primary/80
             leading-[130%]
             mb-4 md:mb-6
             mt-8 md:mt-11
@@ -79,7 +79,7 @@ function ContactSection() {
                   block mb-1
                   text-[16px] md:text-[18px]
                   font-raleway
-                  text-[#1A2935]
+                  text-primary
                 ">
                   Name
                 </label>
@@ -92,10 +92,10 @@ function ContactSection() {
                   className="
                     w-full px-4 py-3
                     rounded
-                    border border-[#DCEFFF]/60
-                    text-[16px] text-[#1A2935]/70
-                    placeholder-[#1A2935]/70
-                    focus:ring-2 focus:ring-[#1A2935]/30
+                    border border-lightBlue/60
+                    text-[16px] text-primary/70
+                    placeholder-primary/70
+                    focus:ring-2 focus:ring-primary/30
                     outline-none
                   "
                 />
@@ -106,7 +106,7 @@ function ContactSection() {
                   block mb-1
                   text-[16px] md:text-[18px]
                   font-raleway
-                  text-[#1A2935]
+                  text-primary
                 ">
                   Email
                 </label>
@@ -119,10 +119,10 @@ function ContactSection() {
                   className="
                     w-full px-4 py-3
                     rounded
-                    border border-[#DCEFFF]/60
-                    text-[16px] text-[#1A2935]/70
-                    placeholder-[#1A2935]/70
-                    focus:ring-2 focus:ring-[#1A2935]/30
+                    border border-lightBlue/60
+                    text-[16px] text-primary/70
+                    placeholder-primary/70
+                    focus:ring-2 focus:ring-primary/30
                     outline-none
                   "
                 />
@@ -134,7 +134,7 @@ function ContactSection() {
                 block mb-1
                 text-[16px] md:text-[18px]
                 font-raleway
-                text-[#1A2935]
+                text-primary
               ">
                 Message
               </label>
@@ -147,10 +147,10 @@ function ContactSection() {
                   w-full h-[120px]
                   px-4 py-3
                   rounded
-                  border border-[#DCEFFF]/60
-                  text-[16px] text-[#1A2935]/70
-                  placeholder-[#1A2935]/70
-                  focus:ring-2 focus:ring-[#1A2935]/30
+                  border border-lightBlue/60
+                  text-[16px] text-primary/70
+                  placeholder-primary/70
+                  focus:ring-2 focus:ring-primary/30
                   outline-none resize-none
                 "
               />
@@ -162,12 +162,15 @@ function ContactSection() {
                 className="
                   w-[190px] md:w-[200px]
                   h-[32px] md:h-[34px]
-                  bg-[#1A2935] text-[#FCFEFF]
+                  bg-primary text-whiteCustom
                   text-[12px] md:text-[14px]
                   font-semibold
                   rounded-md
-                  shadow-[-2px_8px_8px_rgba(0,0,0,0.08)]
-                  hover:bg-[#2A3A45]
+                  shadow-soft
+                  hover:bg-primary/90
+                  focus-visible:ring-2
+                  focus-visible:ring-primary/30
+                  cursor-pointer
                   transition
                   ml-0 md:ml-[5px]
                   mb-[90px]

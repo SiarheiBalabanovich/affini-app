@@ -18,6 +18,7 @@ export default {
         30: "rgba(26, 41, 53, 0.3)",
       },
       whiteCustom: "#FCFEFF",
+      lightBlue: "#DCEFFF",
     },
     boxShadow: {
       soft: "-2px 8px 8px rgba(0,0,0,0.08)"
