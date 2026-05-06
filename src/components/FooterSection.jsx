@@ -13,7 +13,7 @@ function FooterSection() {
   ];
 
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-primary text-whiteCustom">
       <div className="max-w-[1280px] mx-auto px-4 md:px-10 lg:px-16 py-10">
 
         {/* Top */}
@@ -53,10 +53,10 @@ function FooterSection() {
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-white/30 my-6" />
+        <div className="h-px bg-whiteCustom/30 my-6" />
 
         {/* Bottom */}
-        <div className="text-center text-[12px] md:text-[14px] text-white/70 font-raleway">
+        <div className="text-center text-[12px] md:text-[14px] text-whiteCustom/70 font-raleway">
           © 2026 Affini. All rights reserved.
         </div>
       </div>
