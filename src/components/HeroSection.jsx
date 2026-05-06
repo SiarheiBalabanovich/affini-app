@@ -1,120 +1,74 @@
-import { useState, useEffect } from "react";
 import checkboxIcon from "../assets/checkbox.svg";
 import mainImage from "../assets/full_image_hero.png";
-import imageHero1Mobile from "../assets/full_image_hero_mobile.png";
+import imageHeroMobile from "../assets/full_image_hero_mobile.png";
 
 function HeroSection() {
-  const [activeButton, setActiveButton] = useState("trial");
-  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+  const features = [
+    "Always there to chat",
+    "Adapts to their schedule",
+    "Thoughtful conversations",
+  ];
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const handleResize = () => {
-        setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-      };
-      handleResize();
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
-
-  const isSpecialResolution =
-    windowSize.width === 1024 &&
-    (windowSize.height === 1366 || windowSize.height === 768);
-
-  const textContainerMaxWidth = isSpecialResolution ? "420px" : "500px";
-  const textContainerPaddingLeft =
-    isSpecialResolution || (windowSize.width === 1280 && windowSize.height === 800)
-      ? "48px"
-      : "";
-  const heroImageTop = isSpecialResolution ? "-100px" : "-145px";
-  const heroImageHeight = isSpecialResolution ? "800px" : "1000px";
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <section id="home" className="bg-[#DCEFFF] w-full relative lg2:pr-0">
-      <div
-        className="px-0 pt-[20px] pb-[140px] xs:pb-[36px] flex flex-col lg:flex-row justify-between items-start w-full relative"
-        style={{ maxWidth: "1280px", margin: "0 auto" }}
-      >
+    <section id="home" className="relative w-full overflow-hidden bg-lightBlue">
+      <div className="relative mx-auto flex w-full max-w-[1280px] flex-col px-4 pt-5 pb-10 md:pb-20 lg:min-h-[720px] lg:flex-row lg:items-center lg:px-10 lg:py-20 lg2:px-0">
         <div className="relative w-full lg:hidden">
           <img
-            src={imageHero1Mobile}
-            alt="Mobile Hero"
-            className="w-full object-contain -mb-[115px] mt-[-160px] xs:mt-[-115px]"
-            style={{ maxWidth: "100%", height: "auto" }}
+            src={imageHeroMobile}
+            alt="Affini mobile messaging preview"
+            className="mt-[-115px] -mb-[80px] w-full object-contain"
           />
         </div>
 
-        <div
-          className="relative z-10 flex flex-col justify-center px-4 lg:px-0 text-left"
-          style={{
-            maxWidth: textContainerMaxWidth,
-            paddingLeft: textContainerPaddingLeft,
-          }}
-        >
-          <div
-            className="bg-[#FCFEFF] text-[#1A2935] font-raleway font-semibold text-[12px] lg2:text-[20px] leading-[20px] lg2:leading-[24px] tracking-[0.06em] uppercase flex items-center max-w-[245px] lg2:max-w-[425px] mb-4"
-            style={{ padding: "4px", gap: "10px", marginTop: "120px" }}
-          >
-            CONNECTING FAMILIES THROUGH AI
+        <div className="relative z-10 flex w-full max-w-[500px] flex-col items-start">
+          <div className="mb-4 mt-10 inline-flex max-w-[245px] items-center gap-2.5 bg-whiteCustom p-1 font-raleway text-[12px] font-semibold uppercase leading-5 tracking-[0.06em] text-primary lg2:mt-[120px] lg2:max-w-[425px] lg2:text-[20px] lg2:leading-6">
+            Connecting families through AI
           </div>
 
-          <h1 className="font-playfair text-[#1A2935] font-normal text-[24px] sm:text-[28px] lg2:text-[52px] leading-[28px] sm:leading-[32px] lg2:leading-[67.2px] tracking-[-0.03em] mb-4 text-wrap break-words">
+          <h1 className="mb-4 font-playfair text-[24px] font-normal leading-[28px] tracking-[-0.03em] text-primary sm:text-[28px] sm:leading-8 lg2:text-[52px] lg2:leading-[67.2px]">
             Care for your parents <br />
             through simple text <br />
             messages – No apps needed
           </h1>
 
-          <p className="font-raleway text-[#1A2935B3] text-[12px] sm:text-[14px] lg2:text-[20px] leading-[18px] sm:leading-[22px] lg2:leading-[26px] mb-8 xs:mb-6">
+          <p className="mb-6 font-raleway text-[12px] leading-[18px] text-primary/70 sm:text-[14px] sm:leading-[22px] lg2:mb-8 lg2:text-[20px] lg2:leading-[26px]">
             Keep your parents engaged with daily conversations, check-ins, and companionship.
             Works with their regular phone. No complicated setup.
           </p>
 
-          <div className="flex flex-col lg2:flex-row items-start lg2:items-center gap-4 lg2:gap-10 mb-8 xs:mb-6 lg2:justify-start lg2:w-full lg2:ml-[0px]">
-            <div className="flex items-center gap-2 lg2:flex-row lg2:gap-4">
-              <img src={checkboxIcon} alt="Checkbox" className="w-[24px] h-[24px] flex-shrink-0" />
-              <p className="text-[#1A2935] font-raleway font-normal text-[14px] lg2:text-[16px] leading-[20px] lg2:leading-[24px] whitespace-nowrap">
-                Always there to chat
-              </p>
-            </div>
-            <div className="flex items-center gap-2 lg2:flex-row lg2:gap-4">
-              <img src={checkboxIcon} alt="Checkbox" className="w-[24px] h-[24px] flex-shrink-0" />
-              <p className="text-[#1A2935] font-raleway font-normal text-[14px] lg2:text-[16px] leading-[20px] lg2:leading-[24px] whitespace-nowrap">
-                Adapts to their schedule
-              </p>
-            </div>
-            <div className="flex items-center gap-2 lg2:flex-row lg2:gap-4">
-              <img src={checkboxIcon} alt="Checkbox" className="w-[24px] h-[24px] flex-shrink-0" />
-              <p className="text-[#1A2935] font-raleway font-normal text-[14px] lg2:text-[16px] leading-[20px] lg2:leading-[24px] whitespace-nowrap">
-                Thoughtful conversations
-              </p>
-            </div>
+          <div className="mb-6 flex flex-col items-start gap-4 lg2:mb-8 lg2:flex-row lg2:items-center lg2:gap-10">
+            {features.map((feature) => (
+              <div key={feature} className="flex items-center gap-2 lg2:gap-4">
+                <img
+                  src={checkboxIcon}
+                  alt=""
+                  aria-hidden="true"
+                  className="h-6 w-6 flex-shrink-0"
+                />
+                <p className="whitespace-nowrap font-raleway text-[14px] font-normal leading-5 text-primary lg2:text-[16px] lg2:leading-6">
+                  {feature}
+                </p>
+              </div>
+            ))}
           </div>
-          <div className="flex flex-col lg2:flex-row gap-4 lg2:gap-10 w-full">
+
+          <div className="flex w-full flex-col gap-4 lg2:flex-row lg2:gap-10">
             <button
-              className={`h-[48px] rounded-[4px] font-raleway font-semibold text-[14px] sm:text-[16px] px-[10px] transition-all duration-300 shadow-lg ${
-                activeButton === "trial" ? "bg-[#1A2935] text-[#FCFEFF]" : "bg-white text-[#1A2935]"
-              }`}
-              style={{
-                boxShadow: "-2px 8px 8px rgba(0, 0, 0, 0.08)",
-                width: windowSize.width === 1440 ? "320px" : "auto",
-              }}
-              onClick={() => setActiveButton("trial")}
-              onMouseEnter={() => setActiveButton("trial")}
+              type="button"
+              className="h-12 w-full rounded bg-primary px-2.5 font-raleway text-[14px] font-semibold text-whiteCustom shadow-soft transition hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-primary/30 sm:text-[16px] lg2:w-[320px]"
+              onClick={() => scrollToSection("contact-us")}
             >
               START FREE TRIAL
             </button>
 
             <button
-              className={`h-[48px] rounded-[4px] font-raleway font-semibold text-[14px] sm:text-[16px] px-[10px] transition-all duration-300 shadow-lg ${
-                activeButton === "how-it-works" ? "bg-[#1A2935] text-[#FCFEFF]" : "bg-white text-[#1A2935]"
-              }`}
-              style={{
-                boxShadow: "-2px 8px 8px rgba(0, 0, 0, 0.08)",
-                width: windowSize.width === 1440 ? "320px" : "auto",
-              }}
-              onClick={() => setActiveButton("how-it-works")}
-              onMouseEnter={() => setActiveButton("how-it-works")}
+              type="button"
+              className="h-12 w-full rounded bg-whiteCustom px-2.5 font-raleway text-[14px] font-semibold text-primary shadow-soft transition hover:bg-whiteCustom/80 focus-visible:ring-2 focus-visible:ring-primary/30 sm:text-[16px] lg2:w-[320px]"
+              onClick={() => scrollToSection("how-it-works")}
             >
               SEE HOW IT WORKS
             </button>
@@ -124,14 +78,8 @@ function HeroSection() {
 
       <img
         src={mainImage}
-        alt="Main"
-        className="hidden lg:block absolute max-w-none"
-        style={{
-          top: heroImageTop,
-          right: "0",
-          height: heroImageHeight,
-          zIndex: 1,
-        }}
+        alt="Affini messaging experience preview"
+        className="pointer-events-none absolute right-0 top-[-145px] z-[1] hidden h-[1000px] max-w-none object-contain lg:block lg2:top-[-145px]"
       />
     </section>
   );
