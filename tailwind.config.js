@@ -20,6 +20,9 @@ export default {
       whiteCustom: "#FCFEFF",
       lightBlue: "#DCEFFF",
       softGreen: "rgba(180, 229, 200, 0.6)",
+      planBasic: "rgba(53, 244, 131, 0.6)",
+      planFamily: "#198244",
+      darkText: "#161616",
     },
     boxShadow: {
       soft: "-2px 8px 8px rgba(0,0,0,0.08)"
