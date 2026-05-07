@@ -1,112 +1,141 @@
-import step1Image from '../assets/step1_img.png';
-import step2Image from '../assets/step2_img.png';
-import step3Image from '../assets/step3_img.png';
-import simpleSetupIcon from '../assets/button_simple_setup.svg';
-import iconCardStep from '../assets/icon_card_step.svg';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+
+import step1Image from "../assets/step1_img.png";
+import step2Image from "../assets/step2_img.png";
+import step3Image from "../assets/step3_img.png";
+import simpleSetupIcon from "../assets/button_simple_setup.svg";
+import iconCardStep from "../assets/icon_card_step.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function HowItWorksSection() {
+  const sectionRef = useRef(null);
+
+  const steps = [
+    {
+      title: "Quick Setup",
+      description:
+        "Two minutes to get started. Your loved one gets a dedicated number - no apps or downloads needed.",
+      image: step1Image,
+    },
+    {
+      title: "Daily Chats",
+      description:
+        "Our AI companion reaches out with friendly messages throughout the day, following your loved one’s preferred schedule.",
+      image: step2Image,
+    },
+    {
+      title: "Family Updates",
+      description:
+        "Check your easy-to-use dashboard for chat highlights and daily activities. Get important updates while maintaining privacy.",
+      image: step3Image,
+    },
+  ];
 
   useEffect(() => {
-  const ctx = gsap.context(() => {
-    const cards = gsap.utils.toArray(".howitworks-card");
+    if (!sectionRef.current) return;
 
-    if (!cards.length) return;
+    const ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray(".howitworks-card");
 
-    gsap.from(cards, {
-      scrollTrigger: {
-        trigger: cards[0],
-        start: "top 85%",
-        once: true,
-      },
-      y: 60,
-      opacity: 0,
-      scale: 0.95,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power3.out",
-    });
-  });
+      if (!cards.length) return;
 
-  return () => ctx.revert();
-}, []);
+      gsap.from(cards, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          once: true,
+        },
+        y: 60,
+        opacity: 0,
+        scale: 0.95,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power3.out",
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section
+      ref={sectionRef}
       id="how-it-works"
-      className="bg-white pt-[166px] pb-[60px] px-[90px] xs:px-4 xs:py-[80px]"
+      className="bg-whiteCustom px-4 py-20 md:px-10 lg:px-16 lg:pt-[166px] lg:pb-[60px]"
     >
-      <div className="max-w-[1280px] mx-auto">
-        <div className="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-[16px] xs:mb-[48px]">
-          <h2 className="font-playfair text-[#1A2935] font-normal xs:text-[24px] sm:text-[64px] xs:leading-[32px] sm:leading-[120%] tracking-[0.02em]">
+      <div className="mx-auto max-w-[1280px]">
+        <div className="flex flex-row items-center justify-between gap-4 mb-12">
+          <h2 className="font-playfair text-[24px] leading-8 tracking-[0.02em] text-primary md:text-[48px] md:leading-[120%] lg:text-[64px]">
             How It Works
           </h2>
-          <button className="flex items-center gap-[8px] text-[#1A2935] xs:text-[14px] sm:text-[18px] leading-[130%] font-raleway icon-768">
+
+          <button
+            type="button"
+            className="flex items-center gap-2 font-raleway text-[14px] leading-[130%] text-primary md:text-[18px]"
+          >
             <img
               src={simpleSetupIcon}
-              alt="Simple Setup Icon"
-              className="w-[38px] h-[61px]"
+              alt=""
+              aria-hidden="true"
+              className="h-[61px] w-[38px]"
             />
             Simple Setup
           </button>
         </div>
 
-        <div className="font-raleway xs:text-[16px] sm:text-[20px] text-[#1A2935B3] sm:mt-[0px] sm:ml-[500px] xs:mt-0 desc-768">
-          <p className="mb-[20px]">Simple steps to keep your family connected.</p>
+        <div className="max-w-[600px] font-raleway text-[16px] leading-[150%] text-primary/70 md:text-[20px] lg:ml-[500px]">
+          <p className="mb-5">Simple steps to keep your family connected.</p>
           <p>We make it easy to stay close while supporting independence.</p>
         </div>
 
-        {/* Slider for <=768px */}
-        <div className="block lg:hidden mt-[40px]">
+        {/* Slider for mobile/tablet */}
+        <div className="mt-10 block lg:hidden">
           <Swiper
             spaceBetween={16}
             slidesPerView="auto"
             grabCursor
-            style={{ width: '100%', maxWidth: 'none' }}
             className="w-full"
           >
-            {[step1Image, step2Image, step3Image].map((image, index) => (
+            {steps.map((step) => (
               <SwiperSlide
-                key={index}
-                className="flex-shrink-0 rounded-[32px] bg-[rgba(180,229,200,0.6)] shadow-lg p-[16px] flex flex-col h-auto min-h-[400px]"
-                style={{ width: '240px', borderRadius: '0 200px 200px 200px' }}
+                key={step.title}
+                className="
+                  !w-[240px]
+                  flex h-auto min-h-[400px] flex-col
+                  rounded-[0_200px_200px_200px]
+                  bg-softGreen
+                  p-4
+                  shadow-soft
+                "
               >
-                <div className="flex flex-col flex-grow">
+                <div className="flex flex-grow flex-col">
                   <img
                     src={iconCardStep}
-                    alt="Card Step Icon"
-                    className="w-[24px] h-[24px] mb-[16px]"
+                    alt=""
+                    aria-hidden="true"
+                    className="mb-4 h-6 w-6"
                   />
-                  <h3 className="font-playfair text-[#1A2935] text-[18px] leading-[120%] mb-[8px]">
-                    {index === 0
-                      ? 'Quick Setup'
-                      : index === 1
-                      ? 'Daily Chats'
-                      : 'Family Updates'}
+
+                  <h3 className="mb-2 font-playfair text-[18px] leading-[120%] text-primary">
+                    {step.title}
                   </h3>
-                  <p className="font-raleway text-[#1A2935B3] text-[14px] leading-[150%] mb-[16px] flex-grow">
-                    {index === 0
-                      ? 'Two minutes to get started. Your loved one gets a dedicated number - no apps or downloads needed.'
-                      : index === 1
-                      ? 'Our AI companion reaches out with friendly messages throughout the day, following your loved one’s preferred schedule.'
-                      : 'Check your easy-to-use dashboard for chat highlights and daily activities. Get important updates while maintaining privacy.'}
+
+                  <p className="mb-4 flex-grow font-raleway text-[14px] leading-[150%] text-primary/70">
+                    {step.description}
                   </p>
                 </div>
-                <div
-                  className={`flex justify-center mt-auto ${
-                    index === 0 ? 'mt-[20px]' : ''
-                  }`}
-                >
+
+                <div className="mt-auto flex justify-center">
                   <img
-                    src={image}
-                    alt="Step Image"
-                    className="w-[154px] h-auto mx-auto object-contain pb-[8px]"
+                    src={step.image}
+                    alt={`${step.title} illustration`}
+                    className="mx-auto w-[154px] object-contain pb-2"
                   />
                 </div>
               </SwiperSlide>
@@ -114,102 +143,54 @@ function HowItWorksSection() {
           </Swiper>
         </div>
 
-        <div className="hidden lg:flex flex-wrap lg:flex-nowrap justify-center items-start gap-8 md:gap-10 mt-[60px] xs:mt-[40px]">
-          {[step1Image, step2Image, step3Image].map((image, index) => (
-            <div
-              key={index}
-              className={`
-                howitworks-card relative rounded-[32px] p-6 md:p-8 shadow-lg
-                bg-[rgba(180,229,200,0.6)] w-[90%] md:w-[30%] lg:w-[32%] max-w-[410px]
-                flex flex-col justify-between h-full min-h-[500px]
-                ${index === 0 ? 'first-card' : ''}
-              `}
-              style={{ borderRadius: '0 150px 150px 150px' }}
+        {/* Desktop cards */}
+        <div className="mt-[60px] hidden justify-center gap-8 lg:flex lg:flex-nowrap">
+          {steps.map((step, index) => (
+            <article
+              key={step.title}
+              className="
+                howitworks-card
+                flex min-h-[500px] w-[32%] max-w-[410px] flex-col justify-between
+                rounded-[0_150px_150px_150px]
+                bg-softGreen
+                p-8
+                shadow-soft
+              "
             >
               <div>
                 <img
                   src={iconCardStep}
-                  alt="Card Step Icon"
-                  className="w-[24px] h-[24px] mb-6"
+                  alt=""
+                  aria-hidden="true"
+                  className="mb-6 h-6 w-6"
                 />
-                <h3 className="font-playfair text-[#1A2935] text-[20px] md:text-[24px] leading-[120%] mb-4">
-                  {index === 0
-                    ? 'Quick Setup'
-                    : index === 1
-                    ? 'Daily Chats'
-                    : 'Family Updates'}
+
+                <h3 className="mb-4 font-playfair text-[24px] leading-[120%] text-primary">
+                  {step.title}
                 </h3>
-                <p className="font-raleway text-[#1A2935B3] text-[14px] md:text-[16px] leading-[150%] text-left mb-0">
-                  {index === 0
-                    ? 'Two minutes to get started. Your loved one gets a dedicated number - no apps or downloads needed.'
-                    : index === 1
-                    ? 'Our AI companion reaches out with friendly messages throughout the day, following your loved one’s preferred schedule.'
-                    : 'Check your easy-to-use dashboard for chat highlights and daily activities. Get important updates while maintaining privacy.'}
+
+                <p className="font-raleway text-[16px] leading-[150%] text-primary/70">
+                  {step.description}
                 </p>
               </div>
+
               <div
                 className={`
-                  relative mx-auto w-[80%] lg:w-[296px] h-auto mt-6
-                  howitworks-image-container
-                  ${index === 0 ? 'xl:translate-y-[20px]' : ''}
-                  ${index === 2 ? 'third-card-img' : ''}
+                  relative mx-auto mt-6 w-[80%] lg:w-[296px]
+                  ${index === 0 ? "xl:translate-y-5" : ""}
+                  ${index === 2 ? "lg:-translate-y-[15px]" : ""}
                 `}
               >
                 <img
-                  src={image}
-                  alt="Step Image"
-                  className="w-full h-auto object-contain howitworks-img"
+                  src={step.image}
+                  alt={`${step.title} illustration`}
+                  className="h-auto w-full object-contain"
                 />
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
-
-      {/* 1440px */}
-      <style>{`
-        @media (min-width: 1440px) and (max-width: 1440px) {
-          .howitworks-card {
-            width: 400px !important;
-            max-width: 400px;
-            margin-left: 20px !important;
-            margin-right: 20px !important;
-          }
-          .howitworks-card.first-card {
-            transform: none !important;
-          }
-        }
-      `}</style>
-
-      {/* 768px */}
-      <style>{`
-        @media (min-width: 768px) and (max-width: 768px) {
-          .desc-768 {
-            margin-left: 0 !important;
-            width: 600px !important;
-            text-align: left;
-          }
-          .icon-768 {
-            margin-bottom: 20px !important;
-          }
-        }
-      `}</style>
-
-      {/* 1024px */}
-      <style>{`
-        @media (min-width: 1024px) and (max-width: 1024px) {
-          .howitworks-image-container {
-            width: auto !important;
-          }
-          .howitworks-img {
-            margin: 0 auto !important;
-            display: block !important;
-          }
-          .third-card-img {
-            transform: translateY(-15px) !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }
