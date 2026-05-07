@@ -23,6 +23,7 @@ export default {
       planBasic: "rgba(53, 244, 131, 0.6)",
       planFamily: "#198244",
       darkText: "#161616",
+      star: "#FAD378",
     },
     boxShadow: {
       soft: "-2px 8px 8px rgba(0,0,0,0.08)"
