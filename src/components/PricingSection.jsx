@@ -95,23 +95,49 @@ function PricingSection() {
               key={plan.name}
               className={`
                 relative flex min-h-[580px] w-full max-w-[411px] flex-col items-start
-                rounded-[20px] p-4 shadow-soft
-                md:min-h-[638px] md:p-8
+                rounded-[20px] p-4 pb-16 shadow-soft
+                md:min-h-[638px] md:p-8 md:pb-20
                 ${plan.cardClassName}
               `}
             >
-              <div className="absolute left-0 right-0 top-4 flex justify-between px-[30px]">
-                <img src={plan.cornerLeft} alt="" aria-hidden="true" className="h-6 w-6" />
-                <img src={plan.cornerRight} alt="" aria-hidden="true" className="h-6 w-6" />
+              <div className="absolute left-0 right-0 top-6 flex justify-between px-6 md:px-[30px]">
+                <img
+                  src={plan.cornerLeft}
+                  alt=""
+                  aria-hidden="true"
+                  className="h-6 w-6"
+                />
+                <img
+                  src={plan.cornerRight}
+                  alt=""
+                  aria-hidden="true"
+                  className="h-6 w-6"
+                />
               </div>
 
-              <div className="absolute bottom-4 left-0 right-0 flex justify-between px-[30px]">
-                <img src={plan.cornerLeft} alt="" aria-hidden="true" className="h-6 w-6 -rotate-90" />
-                <img src={plan.cornerRight} alt="" aria-hidden="true" className="h-6 w-6 rotate-90" />
+              <div className="absolute bottom-6 left-0 right-0 flex justify-between px-6 md:px-[30px]">
+                <img
+                  src={plan.cornerLeft}
+                  alt=""
+                  aria-hidden="true"
+                  className="h-6 w-6 -rotate-90"
+                />
+                <img
+                  src={plan.cornerRight}
+                  alt=""
+                  aria-hidden="true"
+                  className="h-6 w-6 rotate-90"
+                />
               </div>
 
               <div className="mt-10 flex items-center gap-2">
-                <img src={plan.treeIcon} alt="" aria-hidden="true" className="mt-2.5 h-10 w-[38px]" />
+                <img
+                  src={plan.treeIcon}
+                  alt=""
+                  aria-hidden="true"
+                  className="mt-2.5 h-10 w-[38px]"
+                />
+
                 <h3 className={`font-playfair text-[20px] font-medium md:text-[24px] ${plan.titleClassName}`}>
                   {plan.name}
                 </h3>
