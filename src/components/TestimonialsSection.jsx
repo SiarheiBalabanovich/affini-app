@@ -65,7 +65,6 @@ function TestimonialsSection() {
             </p>
           </div>
         </div>
-
         <div className="relative lg:w-1/2">
           <div className="relative z-20 mt-2 min-h-[220px] max-w-[499px] rounded-[20px] bg-whiteCustom p-8 shadow-review md:min-h-[180px]">
             <p className="font-raleway text-[14px] font-normal leading-[130%] tracking-[-0.005em] text-primary/70 md:text-[18px]">
