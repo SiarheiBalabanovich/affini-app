@@ -116,7 +116,7 @@ function TestimonialsSection() {
         className="
           pointer-events-none absolute z-0 opacity-80
           w-[500px] h-[395px]
-          left-[-95px] top-[280px] rotate-[50deg]
+          left-[-95px] top-[340px] rotate-[50deg]
           md:w-[395px]
           md:left-[-36px] md:top-[406px] md:rotate-[10deg]
           lg:w-[450px]
