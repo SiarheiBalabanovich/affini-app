@@ -122,7 +122,7 @@ function TestimonialsSection() {
           lg:w-[450px]
           lg:left-[-38px] lg:top-[80px] lg:rotate-[45deg]
           xl:w-[495px] xl:h-[770px]
-          xl:left-[-43px] xl:top-[180px] xl:rotate-[10deg]
+          xl:left-[-43px] xl:top-[74px] xl:rotate-[10deg]
         "
       />
 
