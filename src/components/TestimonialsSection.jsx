@@ -114,14 +114,19 @@ function TestimonialsSection() {
         aria-hidden="true"
         className="
           pointer-events-none absolute z-0 opacity-80
-          w-[500px] h-[395px]
-          left-[-95px] top-[280px] rotate-[50deg]
-          md:w-[495px]
-          md:left-[-120px] md:top-[405px] md:rotate-[10deg]
+          hidden lg:block
+
           lg:w-[400px]
-          lg:left-[-78px] xl:top-[405px] xl:rotate-[10deg]
-          xl:w-[495px] xl:h-[770px]
-          xl:left-[-43px] xl:top-[84px] xl:rotate-[10deg]
+          lg:h-[770px]
+          lg:left-[-78px]
+          lg:top-[405px]
+          lg:rotate-[10deg]
+
+          xl:w-[495px]
+          xl:h-[770px]
+          xl:left-[-43px]
+          xl:top-[84px]
+          xl:rotate-[10deg]
         "
       />
 
