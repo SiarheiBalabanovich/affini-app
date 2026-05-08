@@ -51,7 +51,7 @@ function TestimonialsSection() {
   return (
     <section
       id="reviews"
-      className="relative overflow-hidden bg-whiteCustom px-4 py-20 md:px-10 lg:px-16"
+      className="relative bg-whiteCustom px-4 py-20 md:px-10 lg:px-16"
     >
       <div className="relative z-10 mx-auto flex max-w-[1280px] flex-col items-start gap-12 lg:flex-row-reverse">
         <div className="lg:w-1/2">
@@ -115,10 +115,14 @@ function TestimonialsSection() {
         aria-hidden="true"
         className="
           pointer-events-none absolute z-0 opacity-80
-          left-[-95px] bottom-[-140px] h-[520px] w-[500px] rotate-[50deg]
-          md:left-[-36px] md:bottom-0 md:h-[620px] md:w-[395px] md:rotate-[10deg]
-          lg:left-[-38px] lg:bottom-0 lg:h-[770px] lg:w-[450px] lg:rotate-[45deg]
-          xl:left-[-43px] xl:bottom-0 xl:h-[770px] xl:w-[495px] xl:rotate-[10deg]
+          w-[500px] h-[395px]
+          left-[-95px] top-[280px] rotate-[50deg]
+          md:w-[395px]
+          md:left-[-36px] md:top-[406px] md:rotate-[10deg]
+          lg:w-[450px]
+          lg:left-[-38px] lg:top-[80px] lg:rotate-[45deg]
+          xl:w-[495px] xl:h-[770px]
+          xl:left-[-43px] xl:top-[54px] xl:rotate-[10deg]
         "
       />
 
