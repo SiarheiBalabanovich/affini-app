@@ -26,7 +26,8 @@ export default {
       star: "#FAD378",
     },
     boxShadow: {
-      soft: "-2px 8px 8px rgba(0,0,0,0.08)"
+      soft: "-2px 8px 8px rgba(0,0,0,0.08)",
+      review: "0px 8px 40px rgba(19,55,85,0.1)",
       },
       screens: {
         xs: { max: '479px' },

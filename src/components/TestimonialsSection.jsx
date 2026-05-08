@@ -1,48 +1,38 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
 import photoOneTestimonial from "../assets/testimonial_daughter_sarah.png";
 import photoTwoTestimonial from "../assets/testimonial_son_michael.png";
 import photoThreeTestimonial from "../assets/testimonial_daughter_lisa.png";
 import testimonialArrow from "../assets/testimonial_arrow.svg";
-import Star from "./Star";
 import arrowPrev from "../assets/arrow_prev.svg";
 import arrowNext from "../assets/arrow_next.svg";
 import decorativeLine from "../assets/lines_reviews.svg";
 
+import Star from "./Star";
+
+const testimonials = [
+  {
+    text: "Affini has been wonderful for my mom. She loves having someone to chat with throughout the day, and I feel more connected than ever through the family dashboard. It’s given us both peace of mind.",
+    name: "Sarah M.",
+    role: "Daughter",
+    photo: photoOneTestimonial,
+  },
+  {
+    text: "Setup was incredibly simple - just gave Mom the new number and she started texting right away. The AI remembers her stories and preferences, making every conversation feel personal.",
+    name: "Michael R.",
+    role: "Son",
+    photo: photoTwoTestimonial,
+  },
+  {
+    text: "As someone living far from my parents, Affini helps me stay connected without being intrusive. The daily check-ins and activity updates are invaluable.",
+    name: "Lisa K.",
+    role: "Daughter",
+    photo: photoThreeTestimonial,
+  },
+];
+
 function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [starSize, setStarSize] = useState(28);
-
-  useEffect(() => {
-    const updateSize = () => {
-      setStarSize(window.innerWidth < 768 ? 16 : 28);
-    };
-
-    updateSize();
-    window.addEventListener("resize", updateSize);
-
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
-
-  const testimonials = [
-    {
-      text: "Affini has been wonderful for my mom. She loves having someone to chat with throughout the day, and I feel more connected than ever through the family dashboard. It’s given us both peace of mind.",
-      name: "Sarah M.",
-      role: "Daughter",
-      photo: photoOneTestimonial,
-    },
-    {
-      text: "Setup was incredibly simple - just gave Mom the new number and she started texting right away. The AI remembers her stories and preferences, making every conversation feel personal.",
-      name: "Michael R.",
-      role: "Son",
-      photo: photoTwoTestimonial,
-    },
-    {
-      text: "As someone living far from my parents, Affini helps me stay connected without being intrusive. The daily check-ins and activity updates are invaluable.",
-      name: "Lisa K.",
-      role: "Daughter",
-      photo: photoThreeTestimonial,
-    },
-  ];
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
@@ -61,126 +51,110 @@ function TestimonialsSection() {
   return (
     <section
       id="reviews"
-      className="py-16 xs:pb-[80px] xs:py-0 bg-white px-4 md:px-16 lg:px-24 relative"
+      className="relative overflow-hidden bg-whiteCustom px-4 py-20 md:px-10 lg:px-16"
     >
-      <div className="container mx-auto flex flex-col lg:flex-row-reverse items-start gap-12">
-        {/* Title and subtitle */}
+      <div className="relative z-10 mx-auto flex max-w-[1280px] flex-col items-start gap-12 lg:flex-row-reverse">
         <div className="lg:w-1/2">
           <div className="flex flex-col items-start gap-6">
-            <h2 className="text-[58px] font-['Playfair_Display'] text-[#1A2935] xs:text-[24px] font-regular leading-[120%]">
+            <h2 className="font-playfair text-[24px] leading-[120%] text-primary md:text-[40px] lg:text-[58px]">
               Stories From Our Families
             </h2>
-            <p className="text-[20px] font-['Raleway'] font-medium text-[#1A2935]/[80%] xs:text-[14px] leading-[130%]">
+
+            <p className="font-raleway text-[14px] font-medium leading-[130%] text-primary/80 md:text-[18px] lg:text-[20px]">
               See how Affini helps families stay close, no matter the distance.
             </p>
           </div>
         </div>
 
-        {/* Testimonial */}
-        <div className="lg:w-1/2 relative">
-          <div
-            className="bg-white shadow-md rounded-[20px] p-8 relative mt-[10px] z-20"
-            style={{
-              maxWidth: "499px",
-              minHeight: "180px",
-              boxShadow: "0px 8px 40px rgba(19, 55, 85, 0.1)",
-            }}
-          >
-            <p className="text-[18px] xs:text-[14px] font-raleway font-normal text-[#1A2935]/[70%] leading-[130%] tracking-[-0.005em]">
+        <div className="relative lg:w-1/2">
+          <div className="relative z-20 mt-2 max-w-[499px] rounded-[20px] bg-whiteCustom p-8 shadow-review">
+            <p className="font-raleway text-[14px] font-normal leading-[130%] tracking-[-0.005em] text-primary/70 md:text-[18px]">
               {text}
             </p>
 
-            {/* Arrow for testimonials */}
             <img
               src={testimonialArrow}
-              alt="Testimonial Arrow"
-              className="absolute"
-              style={{
-                width: "158px",
-                height: "152px",
-                left: "80px",
-                bottom: "-100px",
-              }}
+              alt=""
+              aria-hidden="true"
+              className="absolute bottom-[-100px] left-[80px] h-[152px] w-[158px]"
             />
           </div>
-          {/* Photo, name, role and rating */}
-          <div className="flex items-center mt-20">
+
+          <div className="mt-20 flex items-center">
             <img
               src={photo}
-              alt={name}
-              className="w-[160px] h-[160px] xs:w-[122px] xs:h-[122px] rounded-full z-20"
-              style={{
-                boxShadow: "rgba(19, 55, 85, 0.1)",
-              }}
+              alt={`${name}, ${role}`}
+              className="z-20 h-[122px] w-[122px] rounded-full shadow-review md:h-[160px] md:w-[160px]"
             />
+
             <div className="ml-4">
-              <h3 className="text-[40px] xs:text-[20px] font-['Playfair_Display'] text-[#1A2935] leading-[120%] -mt-19">
+              <h3 className="font-playfair text-[20px] leading-[120%] text-primary md:text-[40px]">
                 {name}
               </h3>
-              <p className="text-[20px] xs:text-[14px] font-['Raleway'] text-[#1A2935]/[80%] leading-[130%] mb-6">
+
+              <p className="mb-6 font-raleway text-[14px] leading-[130%] text-primary/80 md:text-[20px]">
                 {role}
               </p>
-              <div className="flex mt-2">
-                {[...Array(5)].map((_, index) => (
-                  <Star key={index} size={starSize} color="#FAD378" />
+
+              <div className="mt-2 flex text-star" aria-label="5 out of 5 stars">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <Star
+                    key={index}
+                    className="h-4 w-4 text-star md:h-7 md:w-7"
+                  />
                 ))}
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* Decorative Line */}
+
       <img
         src={decorativeLine}
-        alt="Decorative Line"
-        className="absolute opacity-80 xs:w-[500px] xs:h-[395px] xs:left-[-95px] xs:top-[280px] xs:rotate-[50deg] lg:w-[495px] lg:h-[770px] lg:left-[-43px] lg:top-[54px] lg:rotate-[10deg] decorative-768 decorative-1024"
+        alt=""
+        aria-hidden="true"
+        className="
+          pointer-events-none absolute z-0 opacity-80
+          left-[-95px] top-[280px] h-[395px] w-[500px] rotate-[50deg]
+          md:left-[-36px] md:top-[406px] md:w-[395px] md:rotate-[10deg]
+          lg:left-[-38px] lg:top-[80px] lg:w-[450px] lg:rotate-[45deg]
+          xl:left-[-43px] xl:top-[54px] xl:h-[770px] xl:w-[495px] xl:rotate-[10deg]
+        "
       />
 
-      {/* Toggle buttons */}
-      <div className="flex justify-center items-center mt-12">
+      <div className="relative z-20 mt-12 flex items-center justify-center">
         <button
+          type="button"
+          aria-label="Previous testimonial"
           onClick={handlePrev}
-          className="flex items-center gap-[4px] px-4 py-2 hover:opacity-80 transition z-50"
+          className="flex cursor-pointer items-center gap-1 px-4 py-2 transition hover:opacity-80 focus-visible:ring-2 focus-visible:ring-primary/30"
         >
           <img
             src={arrowPrev}
-            alt="Icon Previous"
-            className="w-[55px] h-[55px]"
+            alt=""
+            aria-hidden="true"
+            className="h-[55px] w-[55px]"
           />
         </button>
+
         <button
+          type="button"
+          aria-label="Next testimonial"
           onClick={handleNext}
-          className="flex items-center gap-[4px] px-4 py-2 hover:opacity-80 transition ml-8 z-50"
+          className="ml-8 flex cursor-pointer items-center gap-1 px-4 py-2 transition hover:opacity-80 focus-visible:ring-2 focus-visible:ring-primary/30"
         >
           <img
             src={arrowNext}
-            alt="Icon Next"
-            className="w-[60px] h-[90px]"
+            alt=""
+            aria-hidden="true"
+            className="h-[90px] w-[60px]"
           />
-          <span className="text-[#1A2935] font-['Raleway'] font-normal text-[18px] leading-[130%] tracking-[-0.005em]">
+
+          <span className="font-raleway text-[18px] font-normal leading-[130%] tracking-[-0.005em] text-primary">
             Next
           </span>
         </button>
       </div>
-
-      <style>{`
-        @media (min-width: 768px) and (max-width: 768px) {
-          .decorative-768 {
-            transform: rotate(10deg) !important;
-            top: 406px !important;
-            left: -36px!important;
-            width: 395px!important;
-          }
-        }
-          @media (min-width: 1024px) and (max-width: 1024px) {
-            .decorative-1024 {
-            transform: rotate(45deg) !important;
-            top: 80px !important;
-            left: -38px!important;
-            width: 450px!important;
-          }
-          }
-      `}</style>
     </section>
   );
 }
