@@ -118,9 +118,9 @@ function TestimonialsSection() {
           w-[500px] h-[395px]
           left-[-95px] top-[280px] rotate-[50deg]
           md:w-[395px]
-          md:left-[-36px] md:top-[406px] md:rotate-[10deg]
+          md:left-[-120px] md:top-[406px] md:rotate-[10deg]
           lg:w-[450px]
-          lg:left-[-38px] lg:top-[80px] lg:rotate-[45deg]
+          lg:left-[-120px] lg:top-[180px] lg:rotate-[45deg]
           xl:w-[495px] xl:h-[770px]
           xl:left-[-43px] xl:top-[84px] xl:rotate-[10deg]
         "
