@@ -118,8 +118,8 @@ function TestimonialsSection() {
 
           lg:w-[400px]
           lg:h-[770px]
-          lg:left-[-78px]
-          lg:top-[405px]
+          lg:left-[-38px]
+          lg:top-[130px]
           lg:rotate-[10deg]
 
           xl:w-[495px]
