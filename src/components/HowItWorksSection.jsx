@@ -13,29 +13,29 @@ import iconCardStep from "../assets/icon_card_step.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const steps = [
+  {
+    title: "Quick Setup",
+    description:
+      "Two minutes to get started. Your loved one gets a dedicated number - no apps or downloads needed.",
+    image: step1Image,
+  },
+  {
+    title: "Daily Chats",
+    description:
+      "Our AI companion reaches out with friendly messages throughout the day, following your loved one’s preferred schedule.",
+    image: step2Image,
+  },
+  {
+    title: "Family Updates",
+    description:
+      "Check your easy-to-use dashboard for chat highlights and daily activities. Get important updates while maintaining privacy.",
+    image: step3Image,
+  },
+];
+
 function HowItWorksSection() {
   const sectionRef = useRef(null);
-
-  const steps = [
-    {
-      title: "Quick Setup",
-      description:
-        "Two minutes to get started. Your loved one gets a dedicated number - no apps or downloads needed.",
-      image: step1Image,
-    },
-    {
-      title: "Daily Chats",
-      description:
-        "Our AI companion reaches out with friendly messages throughout the day, following your loved one’s preferred schedule.",
-      image: step2Image,
-    },
-    {
-      title: "Family Updates",
-      description:
-        "Check your easy-to-use dashboard for chat highlights and daily activities. Get important updates while maintaining privacy.",
-      image: step3Image,
-    },
-  ];
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -67,17 +67,17 @@ function HowItWorksSection() {
     <section
       ref={sectionRef}
       id="how-it-works"
-      className="bg-whiteCustom px-4 py-20 md:px-10 lg:px-16 lg:pt-[166px] lg:pb-[60px]"
+      className="bg-whiteCustom px-4 py-20 md:px-10 lg:px-16 lg:pb-[60px] lg:pt-[166px]"
     >
       <div className="mx-auto max-w-[1280px]">
-        <div className="flex flex-row items-center justify-between gap-4 mb-12">
+        <div className="mb-12 flex flex-row items-center justify-between gap-4">
           <h2 className="font-playfair text-[24px] leading-8 tracking-[0.02em] text-primary md:text-[48px] md:leading-[120%] lg:text-[64px]">
             How It Works
           </h2>
 
           <button
             type="button"
-            className="flex items-center gap-2 font-raleway text-[14px] leading-[130%] text-primary md:text-[18px]"
+            className="flex cursor-pointer items-center gap-2 font-raleway text-[14px] leading-[130%] text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 md:text-[18px]"
           >
             <img
               src={simpleSetupIcon}
@@ -94,7 +94,6 @@ function HowItWorksSection() {
           <p>We make it easy to stay close while supporting independence.</p>
         </div>
 
-        {/* Slider for mobile/tablet */}
         <div className="mt-10 block lg:hidden">
           <Swiper
             spaceBetween={16}
@@ -106,8 +105,7 @@ function HowItWorksSection() {
               <SwiperSlide
                 key={step.title}
                 className="
-                  !w-[240px]
-                  flex h-auto min-h-[400px] flex-col
+                  flex h-auto min-h-[400px] !w-[240px] flex-col
                   rounded-[0_200px_200px_200px]
                   bg-softGreen
                   p-4
@@ -143,7 +141,6 @@ function HowItWorksSection() {
           </Swiper>
         </div>
 
-        {/* Desktop cards */}
         <div className="mt-[60px] hidden justify-center gap-8 lg:flex lg:flex-nowrap">
           {steps.map((step, index) => (
             <article
