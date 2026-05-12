@@ -154,7 +154,7 @@ function BenefitCard({ card }) {
           src={image}
           alt={imageAlt}
           className={`
-            w-full h-auto object-cover
+            h-auto w-full object-cover
             ${isReversed ? "lg:rotate-180" : ""}
           `}
         />
@@ -187,7 +187,7 @@ function BenefitCard({ card }) {
         <p
           className={`
             mx-auto max-w-[363px] font-raleway text-[14px] leading-[150%] text-whiteCustom md:text-[18px]
-            ${isReversed ? "mb-[5px]" : "mb-[52px]"}
+            ${isReversed ? "mb-[52px] lg:mb-[5px]" : "mb-[52px]"}
           `}
         >
           {text}
