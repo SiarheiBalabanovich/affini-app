@@ -65,6 +65,7 @@ function TestimonialsSection() {
             </p>
           </div>
         </div>
+
         <div className="relative lg:w-1/2">
           <div className="relative z-20 mt-2 min-h-[220px] max-w-[499px] rounded-[20px] bg-whiteCustom p-8 shadow-review md:min-h-[180px]">
             <p className="font-raleway text-[14px] font-normal leading-[130%] tracking-[-0.005em] text-primary/70 md:text-[18px]">
@@ -95,7 +96,11 @@ function TestimonialsSection() {
                 {role}
               </p>
 
-              <div className="mt-2 flex text-star" aria-label="5 out of 5 stars">
+              <div
+                className="mt-2 flex text-star"
+                role="img"
+                aria-label="5 out of 5 stars"
+              >
                 {Array.from({ length: 5 }).map((_, index) => (
                   <Star
                     key={index}
@@ -116,16 +121,16 @@ function TestimonialsSection() {
           pointer-events-none absolute z-0 opacity-80
           hidden lg:block
 
-          lg:w-[400px]
-          lg:h-[770px]
           lg:left-[-38px]
           lg:top-[130px]
+          lg:h-[770px]
+          lg:w-[400px]
           lg:rotate-[10deg]
 
-          xl:w-[495px]
-          xl:h-[770px]
           xl:left-[-43px]
           xl:top-[84px]
+          xl:h-[770px]
+          xl:w-[495px]
           xl:rotate-[10deg]
         "
       />
@@ -135,7 +140,7 @@ function TestimonialsSection() {
           type="button"
           aria-label="Previous testimonial"
           onClick={handlePrev}
-          className="flex cursor-pointer items-center gap-1 px-4 py-2 transition hover:opacity-80 focus-visible:ring-2 focus-visible:ring-primary/30"
+          className="flex cursor-pointer items-center gap-1 px-4 py-2 transition hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
         >
           <img
             src={arrowPrev}
@@ -149,7 +154,7 @@ function TestimonialsSection() {
           type="button"
           aria-label="Next testimonial"
           onClick={handleNext}
-          className="ml-8 flex cursor-pointer items-center gap-1 px-4 py-2 transition hover:opacity-80 focus-visible:ring-2 focus-visible:ring-primary/30"
+          className="ml-8 flex cursor-pointer items-center gap-1 px-4 py-2 transition hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
         >
           <img
             src={arrowNext}
