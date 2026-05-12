@@ -10,7 +10,6 @@ import peaceIcon from "../assets/icon_peace.svg";
 import simpleIcon from "../assets/icon_simple.svg";
 import threadPattern from "../assets/thread_pattern.svg";
 
-
 const features = [
   {
     icon: friendIcon,
@@ -137,7 +136,7 @@ function BenefitCard({ card }) {
     <article
       className={`
         relative z-10 mx-auto flex w-full max-w-[350px] flex-col items-center
-        rounded-t-[200px] rounded-b-[16px]
+        rounded-[200px_200px_16px_16px]
         bg-benefitBlue p-8
         md:max-w-[411px]
         ${isReversed ? "lg:mt-[480px] lg:rotate-180" : ""}
@@ -146,7 +145,7 @@ function BenefitCard({ card }) {
       <div
         className={`
           relative mt-[-15px] h-[300px] w-full max-w-[300px]
-          overflow-hidden rounded-t-[200px] bg-benefitBlue
+          overflow-hidden rounded-[200px_200px_0_0] bg-benefitBlue
           md:h-[382px] md:max-w-[362px]
           ${isReversed ? "lg:mt-[-10px]" : ""}
         `}
