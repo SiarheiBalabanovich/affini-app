@@ -68,10 +68,7 @@ function PricingSection() {
               Simple Pricing For Peace Of Mind
             </h2>
 
-            <button
-              type="button"
-              className="flex shrink-0 cursor-pointer items-center gap-2 bg-transparent font-raleway text-[16px] leading-[130%] text-primary md:text-[18px]"
-            >
+            <div className="flex shrink-0 items-center gap-2 font-raleway text-[16px] leading-[130%] text-primary md:text-[18px]">
               <img
                 src={simpleSetupIcon}
                 alt=""
@@ -79,7 +76,7 @@ function PricingSection() {
                 className="h-[61px] w-[38px]"
               />
               Choose your plan
-            </button>
+            </div>
           </div>
 
           <div className="max-w-[520px] font-raleway text-[14px] leading-[150%] text-primary/70 md:mt-[250px] md:text-[20px]">
@@ -101,33 +98,13 @@ function PricingSection() {
               `}
             >
               <div className="absolute left-0 right-0 top-6 flex justify-between px-6 md:px-[30px]">
-                <img
-                  src={plan.cornerLeft}
-                  alt=""
-                  aria-hidden="true"
-                  className="h-6 w-6"
-                />
-                <img
-                  src={plan.cornerRight}
-                  alt=""
-                  aria-hidden="true"
-                  className="h-6 w-6"
-                />
+                <img src={plan.cornerLeft} alt="" aria-hidden="true" className="h-6 w-6" />
+                <img src={plan.cornerRight} alt="" aria-hidden="true" className="h-6 w-6" />
               </div>
 
               <div className="absolute bottom-6 left-0 right-0 flex justify-between px-6 md:px-[30px]">
-                <img
-                  src={plan.cornerLeft}
-                  alt=""
-                  aria-hidden="true"
-                  className="h-6 w-6 -rotate-90"
-                />
-                <img
-                  src={plan.cornerRight}
-                  alt=""
-                  aria-hidden="true"
-                  className="h-6 w-6 rotate-90"
-                />
+                <img src={plan.cornerLeft} alt="" aria-hidden="true" className="h-6 w-6 -rotate-90" />
+                <img src={plan.cornerRight} alt="" aria-hidden="true" className="h-6 w-6 rotate-90" />
               </div>
 
               <div className="mt-10 flex items-center gap-2">
@@ -172,7 +149,7 @@ function PricingSection() {
 
               <button
                 type="button"
-                className="mt-auto flex h-9 w-full cursor-pointer items-center justify-center rounded bg-primary font-raleway text-[14px] leading-[130%] text-whiteCustom shadow-soft transition hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-primary/30 md:h-12 md:text-[16px]"
+                className="mt-auto flex h-9 w-full cursor-pointer items-center justify-center rounded bg-primary font-raleway text-[14px] leading-[130%] text-whiteCustom shadow-soft transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 md:h-12 md:text-[16px]"
                 onClick={scrollToContact}
               >
                 START FREE TRIAL
