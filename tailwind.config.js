@@ -23,6 +23,7 @@ export default {
       planBasic: "rgba(53, 244, 131, 0.6)",
       planFamily: "#198244",
       darkText: "#161616",
+      benefitBlue: "#6F97B9",
       star: "#FAD378",
     },
     boxShadow: {

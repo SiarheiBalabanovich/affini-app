@@ -1,203 +1,122 @@
-import whyChooseimgleft from '../assets/icon_left_whychoose.svg';
-import whyChooseimgright from '../assets/icon_right_whychoose.svg';
-import imageWhyChoose from '../assets/whychoose_img.png';
-import imageAlways from '../assets/alwaysconnected_img.png';
-import arrowIcon from '../assets/icon_arrow_topright.svg';
-import featuresIcon from '../assets/icon_features.svg';
-import friendIcon from '../assets/icon_friend.svg';
-import peaceIcon from '../assets/icon_peace.svg';
-import simpleIcon from '../assets/icon_simple.svg';
-import threadPattern from '../assets/thread_pattern.svg';
+import PropTypes from "prop-types";
+import whyChooseImgLeft from "../assets/icon_left_whychoose.svg";
+import whyChooseImgRight from "../assets/icon_right_whychoose.svg";
+import imageWhyChoose from "../assets/whychoose_img.png";
+import imageAlways from "../assets/alwaysconnected_img.png";
+import arrowIcon from "../assets/icon_arrow_topright.svg";
+import featuresIcon from "../assets/icon_features.svg";
+import friendIcon from "../assets/icon_friend.svg";
+import peaceIcon from "../assets/icon_peace.svg";
+import simpleIcon from "../assets/icon_simple.svg";
+import threadPattern from "../assets/thread_pattern.svg";
+
+
+const features = [
+  {
+    icon: friendIcon,
+    title: "A Friend Who Remembers",
+    text: "Every chat builds on past conversations, creating meaningful connections. Perfect for daily check-ins and sharing moments.",
+  },
+  {
+    icon: peaceIcon,
+    title: "Real Peace of Mind",
+    text: "Know how your loved ones are doing through easy-to-read insights about their daily life and mood. Get updates that matter while respecting their privacy.",
+  },
+  {
+    icon: simpleIcon,
+    title: "Simple for Everyone",
+    text: "Your parents use regular text messaging - nothing new to learn. You get a simple dashboard to stay in the loop.",
+  },
+];
+
+const cards = [
+  {
+    title: "Why Choose Affini",
+    text: "We combine caring AI companionship with family connection, creating a service that’s both personal and reliable.",
+    image: imageWhyChoose,
+    imageAlt: "Woman with phone",
+    isReversed: false,
+  },
+  {
+    title: "Always Connected",
+    text: "Our AI companion provides engaging conversation while keeping you informed about your loved one’s wellbeing.",
+    image: imageAlways,
+    imageAlt: "Woman with phone",
+    isReversed: true,
+  },
+];
 
 function WhyChooseSection() {
   return (
     <section
       id="benefits"
-      className="bg-white w-full flex flex-col items-center py-[170px] xs:py-0 overflow-hidden"
-      style={{ maxWidth: '1440px', margin: '0 auto', marginTop: '120px' }}
+      className="relative mx-auto mt-[120px] flex w-full max-w-[1440px] flex-col items-center overflow-hidden bg-whiteCustom px-4 py-20 md:px-10 lg:px-16 lg:py-[170px]"
     >
-      {/* Title for full screen */}
-      <div
-        className="text-center -mb-[290px] hidden lg:block"
-        style={{ width: '100%' }}
-      >
-        <h2
-          className="font-playfair text-[#1A2935] text-[64px] xs:text-[24px] leading-[120%] tracking--2 mb-[-80px] xs:mb-0 ml-[84px] xs:ml-0"
-        >
+      <div className="hidden w-full text-center lg:block lg:-mb-[290px]">
+        <h2 className="ml-[84px] font-playfair text-[64px] leading-[120%] tracking-[-0.02em] text-primary">
           Why Choose Affini
         </h2>
       </div>
 
-      {/* Main content */}
-      <div
-        className="relative flex flex-col sm:flex-row sm:justify-between w-full xs:pl-[6px] xs:pr-[6px] md:px-[80px] xxl:mt-[200px]"
-        style={{ gap: '24px' }}
-      >
-        {/* Decorative pattern */}
+      <div className="relative flex w-full max-w-[1280px] flex-col gap-6 md:px-10 lg:flex-row lg:items-center lg:justify-between lg:px-0 xxl:mt-[200px]">
         <img
           src={threadPattern}
-          alt="Decorative Thread Pattern"
-          className="block thread-pattern-mobile"
-          style={{
-            position: 'absolute',
-            top: '210px',
-            right: '-90px',
-            width: '640px',
-            height: '520px',
-            transform: 'rotate(0deg)',
-          }}
+          alt=""
+          aria-hidden="true"
+          className="
+            pointer-events-none absolute z-0
+            right-[-90px] top-[210px] h-[520px] w-[640px]
+            max-md:left-[75px] max-md:top-[775px]
+            max-[320px]:top-[725px]
+          "
         />
 
-        {/* First card */}
-        <div
-          className="relative flex flex-col items-center card-style xs:w-[350px] md:w-[411px] xs:mx-auto"
-          style={{
-            width: window.innerWidth <= 768 ? '350px' : '411px',
-            borderTopLeftRadius: '200px',
-            borderTopRightRadius: '200px',
-            borderBottomLeftRadius: '16px',
-            borderBottomRightRadius: '16px',
-            padding: '32px',
-            backgroundColor: '#6F97B9',
-          }}
-        >
-          <div
-            className="relative card-image-container"
-            style={{
-              width: window.innerWidth <= 768 ? '300px' : '362.74px',
-              height: window.innerWidth <= 768 ? '300px' : '382px',
-              borderRadius: '200px 200px 0 0',
-              backgroundColor: '#6F97B9',
-              position: 'relative',
-              marginTop: '-15px',
-            }}
-          >
-            <img
-              src={imageWhyChoose}
-              alt="Woman with phone"
-              className="w-full sm:h-full xs:h-auto object-cover"
-            />
-            <img
-              src={arrowIcon}
-              alt="Arrow Icon"
-              className="absolute card-arrow xs:top-[20px] xs:left-[226px] md:top-[50px] md:right-[-7px] w-[90px] xs:w-[50px] h-[80px] xs:h-[50px] transform rotate-0"
-            />
-          </div>
-          <div className="text-center mt-[24px]">
-            <h3
-              className="font-playfair font-medium text-white text-[24px] xs:text-[20px] leading-[120%]"
-              style={{ marginBottom: '8px', marginTop: '18px' }}
-            >
-              Why Choose Affini
-            </h3>
-            <p
-              className="font-raleway font-normal text-white text-[18px] xs:text-[14px] leading-[150%]"
-              style={{
-                maxWidth: '363px',
-                margin: '0 auto',
-                marginBottom: '52px',
-              }}
-            >
-              We combine caring AI companionship with family connection, creating a
-              service that’s both personal and reliable.
-            </p>
-          </div>
-          <div
-            className="absolute w-full flex justify-between"
-            style={{
-              bottom: '32px',
-              padding: '0 16px',
-            }}
-          >
-            <img
-              src={whyChooseimgleft}
-              alt="Icon Left"
-              className="w-[24px] h-[24px]"
-            />
-            <img
-              src={whyChooseimgright}
-              alt="Icon Right"
-              className="w-[24px] h-[24px]"
-            />
-          </div>
-        </div>
+        <BenefitCard card={cards[0]} />
 
-        <div
-          className="whychoose-row lg:hidden text-center mb-4 xs:-mb-3 flex items-center justify-center gap-2"
-          style={{ marginTop: '24px' }}
-        >
+        <div className="flex items-center justify-center gap-2 text-center lg:hidden">
           <img
             src={arrowIcon}
-            alt="Some Icon"
-            className="whychoose-icon"
-            style={{ width: '40px', height: '40px' }}
+            alt=""
+            aria-hidden="true"
+            className="h-7 w-7 max-[320px]:h-6 max-[320px]:w-6"
           />
-          <h2
-            className="font-playfair text-[#1A2935] text-[64px] xs:text-[24px] leading-[120%] tracking--2"
-            style={{ margin: 0 }}
-          >
+
+          <h2 className="whitespace-nowrap font-playfair text-[20px] leading-[120%] tracking-[-0.02em] text-primary min-[391px]:text-[32px] max-[320px]:text-[18px]">
             Why Choose Affini
           </h2>
         </div>
 
-        {/* Text section */}
-        <div className="title-1024 flex-1 flex flex-col justify-start mt-[200px] xs:mt-[20px]">
-          <div
-            className="flex items-center gap-[8px]"
-            style={{ marginBottom: '24px' }}
-          >
+        <div className="relative z-10 flex flex-1 flex-col justify-start lg:mt-[200px]">
+          <div className="mb-6 flex items-center gap-2">
             <img
               src={featuresIcon}
-              alt="Features Icon"
-              style={{ width: '38px', height: '61px' }}
+              alt=""
+              aria-hidden="true"
+              className="h-[61px] w-[38px]"
             />
-            <span
-              className="font-raleway font-normal text-[#1A2935] text-[18px] xs:text-[16px] leading-[130%] tracking--0.5"
-            >
+
+            <span className="font-raleway text-[16px] leading-[130%] tracking-[-0.005em] text-primary md:text-[18px]">
               Features
             </span>
           </div>
-          <ul className="font-raleway text-[#1A2935B3] text-[16px] leading-[150%]">
-            {[
-              {
-                icon: friendIcon,
-                title: 'A Friend Who Remembers',
-                text: 'Every chat builds on past conversations, creating meaningful connections. Perfect for daily check-ins and sharing moments.',
-              },
-              {
-                icon: peaceIcon,
-                title: 'Real Peace of Mind',
-                text: 'Know how your loved ones are doing through easy-to-read insights about their daily life and mood. Get updates that matter while respecting their privacy.',
-              },
-              {
-                icon: simpleIcon,
-                title: 'Simple for Everyone',
-                text: 'Your parents use regular text messaging - nothing new to learn. You get a simple dashboard to stay in the loop.',
-              },
-            ].map(({ icon, title, text }, index) => (
-              <li
-                key={index}
-                className="flex items-start"
-                style={{ marginBottom: '24px' }}
-              >
+
+          <ul className="font-raleway text-primary/70">
+            {features.map((feature) => (
+              <li key={feature.title} className="mb-6 flex items-start">
                 <img
-                  src={icon}
-                  alt={`${title} Icon`}
-                  style={{
-                    width: '45px',
-                    height: '45px',
-                    marginRight: '24px',
-                  }}
+                  src={feature.icon}
+                  alt=""
+                  aria-hidden="true"
+                  className="mr-6 h-[45px] w-[45px] shrink-0"
                 />
-                <div style={{ width: '339px' }}>
-                  <strong
-                    className="font-playfair font-medium text-[#1A2935] text-[24px] xs:text-[20px] leading-[148%]"
-                    style={{ display: 'block', marginBottom: '8px' }}
-                  >
-                    {title}
+
+                <div className="max-w-[339px]">
+                  <strong className="mb-2 block font-playfair text-[20px] font-medium leading-[148%] text-primary md:text-[24px]">
+                    {feature.title}
                   </strong>
-                  <p className="font-raleway font-normal text-[#1A2935CC] text-[18px] xs:text-[12px] leading-[130%] tracking--0.5">
-                    {text}
+
+                  <p className="font-raleway text-[12px] leading-[130%] tracking-[-0.005em] text-primary/80 md:text-[18px]">
+                    {feature.text}
                   </p>
                 </div>
               </li>
@@ -205,334 +124,113 @@ function WhyChooseSection() {
           </ul>
         </div>
 
-        {/* Second card */}
-        <div
-          className="relative flex flex-col items-center card-style card-second xs:w-[350px] md:w-[411px] xs:mt-0 md:mt-[480px]"
-          style={{
-            borderTopLeftRadius: '200px',
-            borderTopRightRadius: '200px',
-            borderBottomLeftRadius: '16px',
-            borderBottomRightRadius: '16px',
-            padding: '32px',
-            backgroundColor: '#6F97B9',
-            transform: 'rotate(180deg)',
-          }}
-        >
-          <div
-            className="relative card-image-container xs:w-[300px] xs:h-[300px] md:w-[362px] md:h-[382px]"
-            style={{
-              borderRadius: '200px 200px 0 0',
-              backgroundColor: '#6F97B9',
-              position: 'relative',
-              marginTop: '-10px',
-            }}
-          >
-            <img
-              src={imageAlways}
-              alt="Woman with phone"
-              style={{ objectFit: 'cover', transform: 'rotate(180deg)' }}
-            />
-            <img
-              src={arrowIcon}
-              alt="Arrow Icon"
-              className="absolute card-arrow xs:top-[230px] xs:left-[8px] md:top-[270px] md:left-[-30px] w-[165px] xs:w-[50px] h-[85px] xs:h-[50px] transform rotate-180"
-            />
-          </div>
-          <div
-            className="text-center mt-[24px]"
-            style={{ transform: 'rotate(180deg)' }}
-          >
-            <h3
-              className="font-playfair font-medium text-white text-[24px] xs:text-[20px] leading-[120%]"
-              style={{
-                marginBottom: '8px',
-                marginTop: '52px',
-              }}
-            >
-              Always Connected
-            </h3>
-            <p
-              className="font-raleway font-normal text-white text-[18px] xs:text-[14px] leading-[150%]"
-              style={{
-                maxWidth: '363px',
-                margin: '0 auto',
-                marginBottom: '5px',
-              }}
-            >
-              Our AI companion provides engaging conversation while keeping you
-              informed about your loved one’s wellbeing.
-            </p>
-          </div>
-          <div
-            className="absolute w-full flex justify-between"
-            style={{
-              bottom: '42px',
-              padding: '0 16px',
-            }}
-          >
-            <img
-              src={whyChooseimgleft}
-              alt="Icon Left"
-              className="w-[24px] h-[24px]"
-            />
-            <img
-              src={whyChooseimgright}
-              alt="Icon Right"
-              className="w-[24px] h-[24px]"
-            />
-          </div>
-        </div>
+        <BenefitCard card={cards[1]} />
       </div>
-
-      <style>{`
-        /* For 320px */
-        @media (max-width: 320px) {
-          #benefits .whychoose-row {
-            display: inline-flex !important;
-            align-items: center !important;
-            gap: 6px !important;
-            white-space: nowrap !important;
-          }
-          #benefits .whychoose-icon {
-            width: 24px !important;
-            height: 24px !important;
-          }
-          #benefits .whychoose-row h2 {
-            font-size: 18px !important;
-            line-height: 22px !important;
-          }
-          #benefits .card-style {
-            width: 295px !important;
-            height: auto !important;
-          }
-          #benefits .card-image-container {
-            width: 270px !important;
-            height: 300px !important;
-            margin-top: -15px !important;
-          }
-          #benefits .card-arrow {
-            width: 35px !important;
-            height: 45px !important;
-          }
-          #benefits h3 {
-            font-size: 20px !important;
-          }
-          #benefits p {
-            font-size: 14px !important;
-          }
-          #benefits ul li strong {
-            font-size: 14px !important;
-          }
-          #benefits ul li p {
-            font-size: 12px !important;
-          }
-          #benefits .flex-1.flex.flex-col.justify-start {
-            margin-top: 20px !important;
-          }
-          #benefits h2[class*="lg:hidden"] {
-            font-size: 24px !important;
-          }
-            #benefits .thread-pattern-mobile {
-            top: 725px !important;
-            left: 75px !important;
-          }
-        }
-
-        /* 321px - 390px */
-        @media (min-width: 321px) and (max-width: 390px) {
-          #benefits .whychoose-row {
-            display: inline-flex !important;
-            align-items: center !important;
-            gap: 6px !important;
-            white-space: nowrap !important;
-          }
-          #benefits .whychoose-icon {
-            width: 28px !important;
-            height: 28px !important;
-          }
-          #benefits .whychoose-row h2 {
-            font-size: 20px !important;
-            line-height: 24px !important;
-          }
-          #benefits h2[class*="lg:hidden"] {
-            font-size: 28px !important;
-          }
-          #benefits ul li p {
-            margin-right: 20px !important;
-          }
-          #benefits .card-second {
-            margin-left: auto !important;
-            margin-right: 10px !important;
-          }
-          #benefits .thread-pattern-mobile {
-            top: 775px !important;
-            left: 75px !important;
-          }
-        }
-
-        /* 391px - 768px */
-        @media (min-width: 391px) and (max-width: 768px) {
-          #benefits .card-style {
-            width: 411px !important;
-          }
-          #benefits .card-image-container {
-            width: 362.74px !important;
-            height: 382px !important;
-          }
-          #benefits .card-second {
-            margin-top: 20px !important;
-          }
-          #benefits .card-arrow {
-            width: 90px !important;
-            height: 80px !important;
-          }
-          #benefits h3 {
-            font-size: 24px !important;
-          }
-          #benefits p {
-            font-size: 18px !important;
-          }
-          #benefits h2[class*="lg:hidden"] {
-            font-size: 32px !important;
-            margin-top: 40px !important;
-          }
-          #benefits .flex-1.flex.flex-col.justify-start {
-            margin-top: 20px !important;
-          }
-          #benefits > div.relative.flex {
-            flex-direction: column !important;
-          }
-        }
-
-        /* 1024px - 1280px */
-        @media (min-width: 1024px) and (max-width: 1280px) {
-          #benefits .card-style {
-            width: 380px !important;
-          }
-          #benefits .card-image-container {
-            width: 335px !important;
-            height: 350px !important;
-          }
-          #benefits .card-arrow {
-            width: 80px !important;
-            height: 70px !important;
-          }
-            #benefits h2 {
-            margin-left: 200px;
-            }
-          #benefits h3 {
-            font-size: 22px !important;
-          }
-          #benefits p {
-            font-size: 16px !important;
-          }
-          #benefits > div.relative.flex {
-            flex-direction: row !important;
-            align-items: center !important;
-          }
-        }
-
-          @media (min-width: 1024px) and (max-width: 1024px) {
-          #benefits h2 {
-            margin-left: 100px;
-            margin-top: -150px !important;
-            }
-          }
-
-        /* 1281px - 1440px */
-        @media (min-width: 1281px) and (max-width: 1440px) {
-          #benefits .card-style {
-            width: 400px !important;
-          }
-          #benefits .card-image-container {
-            width: 350px !important;
-            height: 370px !important;
-          }
-          #benefits .card-arrow {
-            width: 85px !important;
-            height: 75px !important;
-          }
-          #benefits h3 {
-            font-size: 23px !important;
-          }
-            #benefits h2 {
-            margin-left: 170px;
-            margin-bottom: -55px;
-          }
-          #benefits p {
-            font-size: 17px !important;
-          }
-          #benefits > div.relative.flex {
-            flex-direction: row !important;
-            align-items: center !important;
-          }
-        }
-
-@media (min-width: 1440px) and (max-width: 1440px) {
-#benefits h2 {
-            margin-left: 60px;
-          }
-}
-
-        /* 1024px */
-        @media (min-width: 1024px) and (max-width: 1024px) {
-          #benefits {
-            overflow-x: hidden;
-            padding-left: 20px !important;
-            padding-right: 20px !important;
-            margin: 0 auto;
-            text-align: center;
-          }
-          #benefits > div.relative.flex {
-            margin: 0 auto;
-            padding-left: 20px !important;
-            padding-right: 20px !important;
-            text-align: center;
-          }
-          #benefits .card-style {
-            width: 240px !important;
-            height: 480px !important;
-            margin: 0 auto !important;
-          }
-          #benefits .card-image-container {
-            width: 210px !important;
-            height: 320px !important;
-          }
-          #benefits .card-arrow {
-            width: 45px !important;
-            height: 40px !important;
-            top: 70px !important;
-          }
-          #benefits h3 {
-            font-size: 20px !important;
-          }
-          #benefits p {
-            font-size: 14px !important;
-          }
-          #benefits .card-second {
-            margin-top: 280px !important;
-          }
-          #benefits .flex-1.flex.flex-col.justify-start {
-            text-align: left !important;
-          }
-        }
-
-          @media screen and (width: 1024px) and (height: 1366px) and (orientation: portrait) {
-    #benefits h2 {
-    margin-top: -120px;
-    margin-left: 80px;
-  }
-}
-
-            @media screen and (width: 1024px) and (height: 768px) and (orientation: portrait) {
-    #benefits h2 {
-    margin-top: -200px !important;
-    margin-left: 0px; !important;
-  }
-      }
-      `}</style>
     </section>
   );
 }
+
+function BenefitCard({ card }) {
+  const { title, text, image, imageAlt, isReversed } = card;
+
+  return (
+    <article
+      className={`
+        relative z-10 mx-auto flex w-full max-w-[350px] flex-col items-center
+        rounded-t-[200px] rounded-b-[16px]
+        bg-benefitBlue p-8
+        md:max-w-[411px]
+        ${isReversed ? "lg:mt-[480px] lg:rotate-180" : ""}
+      `}
+    >
+      <div
+        className={`
+          relative mt-[-15px] h-[300px] w-full max-w-[300px]
+          overflow-hidden rounded-t-[200px] bg-benefitBlue
+          md:h-[382px] md:max-w-[362px]
+          ${isReversed ? "lg:mt-[-10px]" : ""}
+        `}
+      >
+        <img
+          src={image}
+          alt={imageAlt}
+          className={`
+            h-full w-full object-cover
+            ${isReversed ? "lg:rotate-180" : ""}
+          `}
+        />
+
+        <img
+          src={arrowIcon}
+          alt=""
+          aria-hidden="true"
+          className={`
+            absolute h-[50px] w-[50px]
+            ${
+              isReversed
+                ? "left-2 top-[230px] rotate-180 md:left-[-30px] md:top-[270px] md:h-[85px] md:w-[165px]"
+                : "left-[226px] top-5 md:right-[-7px] md:left-auto md:top-[50px] md:h-20 md:w-[90px]"
+            }
+          `}
+        />
+      </div>
+
+      <div
+        className={`
+          mt-6 text-center
+          ${isReversed ? "lg:rotate-180" : ""}
+        `}
+      >
+        <h3
+          className={`
+            mb-2 font-playfair text-[20px] font-medium leading-[120%] text-whiteCustom md:text-[24px]
+            ${isReversed ? "lg:mt-[52px]" : "lg:mt-[18px]"}
+          `}
+        >
+          {title}
+        </h3>
+
+        <p
+          className={`
+            mx-auto max-w-[363px] font-raleway text-[14px] leading-[150%] text-whiteCustom md:text-[18px]
+            ${isReversed ? "mb-[5px]" : "mb-[52px]"}
+          `}
+        >
+          {text}
+        </p>
+      </div>
+
+      <div
+        className={`
+          absolute left-0 flex w-full justify-between px-4
+          ${isReversed ? "bottom-[42px]" : "bottom-8"}
+        `}
+      >
+        <img
+          src={whyChooseImgLeft}
+          alt=""
+          aria-hidden="true"
+          className="h-6 w-6"
+        />
+        <img
+          src={whyChooseImgRight}
+          alt=""
+          aria-hidden="true"
+          className="h-6 w-6"
+        />
+      </div>
+    </article>
+  );
+}
+
+BenefitCard.propTypes = {
+  card: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    imageAlt: PropTypes.string.isRequired,
+    isReversed: PropTypes.bool.isRequired,
+  }).isRequired,
+};
 
 export default WhyChooseSection;
