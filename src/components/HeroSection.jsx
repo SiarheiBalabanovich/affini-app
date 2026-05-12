@@ -2,26 +2,26 @@ import checkboxIcon from "../assets/checkbox.svg";
 import mainImage from "../assets/full_image_hero.png";
 import imageHeroMobile from "../assets/full_image_hero_mobile.png";
 
-function HeroSection() {
-  const features = [
-    "Always there to chat",
-    "Adapts to their schedule",
-    "Thoughtful conversations",
-  ];
+const features = [
+  "Always there to chat",
+  "Adapts to their schedule",
+  "Thoughtful conversations",
+];
 
+function HeroSection() {
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section id="home" className="relative w-full  bg-lightBlue">
-      <div className="relative mx-auto flex w-full max-w-[1280px] flex-col px-4 pt-5 pb-10 md:pb-20 lg:min-h-[720px] lg:flex-row lg:items-center lg:px-10 lg:py-20 lg2:px-0">
+    <section id="home" className="relative w-full bg-lightBlue">
+      <div className="relative mx-auto flex w-full max-w-[1280px] flex-col px-4 pb-10 pt-5 md:pb-20 lg:min-h-[720px] lg:flex-row lg:items-center lg:px-10 lg:py-20 lg2:px-0">
         <div className="relative -mx-4 w-[calc(100%+2rem)] lg:hidden">
           <img
             src={imageHeroMobile}
             alt="Affini mobile messaging preview"
-            className="mt-[-115px] -mb-[30px] w-full object-contain"
-        />
+            className="-mb-[30px] mt-[-115px] w-full object-contain"
+          />
         </div>
 
         <div className="relative z-10 flex w-full max-w-[500px] flex-col items-start">
@@ -59,7 +59,7 @@ function HeroSection() {
           <div className="flex w-full flex-col gap-4 lg2:flex-row lg2:gap-10">
             <button
               type="button"
-              className="h-12 w-full rounded bg-primary px-2.5 font-raleway text-[14px] font-semibold text-whiteCustom shadow-soft transition hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-primary/30 sm:text-[16px] lg2:w-[320px]"
+              className="h-12 w-full cursor-pointer rounded bg-primary px-2.5 font-raleway text-[14px] font-semibold text-whiteCustom shadow-soft transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 sm:text-[16px] lg2:w-[320px]"
               onClick={() => scrollToSection("contact-us")}
             >
               START FREE TRIAL
@@ -67,7 +67,7 @@ function HeroSection() {
 
             <button
               type="button"
-              className="h-12 w-full rounded bg-whiteCustom px-2.5 font-raleway text-[14px] font-semibold text-primary shadow-soft transition hover:bg-whiteCustom/80 focus-visible:ring-2 focus-visible:ring-primary/30 sm:text-[16px] lg2:w-[320px]"
+              className="h-12 w-full cursor-pointer rounded bg-whiteCustom px-2.5 font-raleway text-[14px] font-semibold text-primary shadow-soft transition hover:bg-whiteCustom/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 sm:text-[16px] lg2:w-[320px]"
               onClick={() => scrollToSection("how-it-works")}
             >
               SEE HOW IT WORKS
@@ -80,16 +80,10 @@ function HeroSection() {
         src={mainImage}
         alt="Affini messaging experience preview"
         className="
-        pointer-events-none
-        absolute
-        right-0
-        top-[-145px]
-        z-[1]
-        hidden
-        h-[1000px]
-        max-w-none
-        object-contain
-        lg:block
+          pointer-events-none
+          absolute right-0 top-[-145px] z-[1]
+          hidden h-[1000px] max-w-none object-contain
+          lg:block
         "
       />
     </section>
