@@ -11,17 +11,21 @@ import FooterSection from './components/FooterSection';
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
-      <HeroSection />
-      <HowItWorksSection />
-      <WhyChooseSection />
-      <BeginJourneySection />
-      <PricingSection />
-      <TestimonialsSection />
-      <ContactFormSection />
+
+      <main>
+        <HeroSection />
+        <HowItWorksSection />
+        <WhyChooseSection />
+        <BeginJourneySection />
+        <PricingSection />
+        <TestimonialsSection />
+        <ContactFormSection />
+      </main>
+
       <FooterSection />
-    </div>
+    </>
   );
 }
 
