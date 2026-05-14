@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png";
+import logo from "../assets/logo_footer.svg";
 
 const footerLinks = [
   { label: "HOME", href: "#" },
