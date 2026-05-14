@@ -142,7 +142,7 @@ function HowItWorksSection() {
         </div>
 
         <div className="mt-[60px] hidden justify-center gap-8 lg:flex lg:flex-nowrap">
-          {steps.map((step, index) => (
+          {steps.map((step) => (
             <article
               key={step.title}
               className="
@@ -171,13 +171,7 @@ function HowItWorksSection() {
                 </p>
               </div>
 
-              <div
-                className={`
-                  relative mx-auto mt-6 w-[80%] lg:w-[296px]
-                  ${index === 0 ? "xl:translate-y-5" : ""}
-                  ${index === 2 ? "lg:-translate-y-[15px]" : ""}
-                `}
-              >
+              <div className="relative mx-auto mt-6 w-[80%] lg:w-[296px]">
                 <img
                   src={step.image}
                   alt={`${step.title} illustration`}
